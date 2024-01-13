@@ -11,6 +11,7 @@ x <- "I am a student"
 x
 x[3]
 
+
 x <- matrix(1:12, nrow=3, ncol=4)
 x
 x[1,2]
@@ -18,6 +19,11 @@ x[1,]  # the first row
 x[,2]  # the second column
 x[3, 3] <- 4.5   
 x   # the entire third column will be shown as float! 
+min(x)
+max(x)
+median(x)
+var(x)
+
 
 x <- list()    # list can combine different data types
 x[[1]] = "I am a student"   # double brackets: the first element in the list
@@ -38,6 +44,7 @@ x * y
 d = runif(10)   # generate 10 random numbers from [0, 1]
 d
 
+################
 x= rep("",3)   # repeat the empty string for three times
 x[1]  = "I am a graduate student"
 x[2] = "who am I?" 
@@ -45,17 +52,29 @@ x[3] = "who are you?"
 
 nchar(x[1])   # the number of characters
 substring(x[1],1,3)   # cut a substring
+
 strsplit(x[2], split=" ")   # string split based on spaces
+y = unlist(strsplit(x[2], split=" "))  # convert to vector
+y
+####
+
 paste("a","hello",sep="") 
-grep("who",x) 
-gsub("graduate","undergraduate",x) 
+grep("who",x)  # which ones what indexes contain "who"
+
+gsub("graduate","undergraduate",x)   # substitution
+
 toupper(x) 
 tolower(x)
 
+################
+
 data=read.csv("https://book.phylolab.net/binf8441/data/lab1_data.csv") 
 data
+data=read.csv("../data/lab1_data.csv") 
 data[,1] = data[,1] * 10 
-write.csv(data,"../results/newdata.csv", row.names=F) 
+write.csv(data,"../results/lab01_newdata.csv", row.names=F) 
+
+# read.table is more powerful and more general than read.csv
 
 # flow control: 
 x=1 
