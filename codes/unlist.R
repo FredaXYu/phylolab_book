@@ -8,6 +8,7 @@ typeof(n[1])
 typeof(n[[1]])
 unlist(l.ex, recursive = TRUE)
 
+#===========================================
 i <- '34-68'
 # delete the ''
 i_no_quotation = gsub("'", "", i)

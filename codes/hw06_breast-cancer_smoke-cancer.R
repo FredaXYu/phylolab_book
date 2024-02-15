@@ -2,7 +2,7 @@
 # 15 Feb 2024
 
 #=================================================================
-# breast-cancer.csv
+# Problem 1: breast-cancer.csv
 # The dataset includes three variables – 
 # tumor size, breast (left or right), and class (recurrent or no-recurrent).
 
@@ -69,5 +69,38 @@ t.test(recurrent, no_recurrent, alternative = "two.sided")
 # the tumor size of the no-recurrent class. 
 
 #=================================================================
+# Problem 2: smoke-cancer.csv
+# https://blog.csdn.net/qq_27390023/article/details/121093518?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170799828916800192235521%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170799828916800192235521&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-121093518-null-null.142^v99^pc_search_result_base1&utm_term=chisq.test&spm=1018.2226.3001.4187
+
+# H0: independent     H1: associated
+# Method 1: using chi square test
+
+smoke_data = read.csv("../data/smoke_cancer.csv")
+tbl = table(smoke_data)
+chisq.test(tbl)
+
+# Because p-value = 0.006513 < 0.05, we reject the null hypothesis and 
+# conclude that smoking is associated with cancer. 
+
+#--------------
+# Method 2: using Fisher精确检验
+fisher.test(tbl)
+# p-value = 0.003696
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
